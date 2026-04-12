@@ -35,11 +35,6 @@ export default function ManageTeam() {
     finally { setSaving(false) }
   }
 
-  const handleDelete = async (id) => {
-    if (!confirm('remove this member?')) return
-    try { await api.delete(`/team${id}`); fetch() }
-    catch { flash('err', 'delete failed.') }
-  }
 
   return (
     <div style={{ padding: '64px 0 80px' }}>
@@ -89,9 +84,6 @@ export default function ManageTeam() {
                     <span className="badge badge-green" style={{ fontSize: 10 }}>{m.role}</span>
                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: 12, color: 'var(--text-dim)' }}>{m.position}</span>
                   </div>
-                  <button onClick={() => handleDelete(m._id)} className="btn" style={{ fontSize: 12, padding: '5px 14px', color: 'var(--danger)', borderColor: 'rgba(248,113,113,0.25)' }}>
-                    remove
-                  </button>
                 </div>
               ))}
             </div>
