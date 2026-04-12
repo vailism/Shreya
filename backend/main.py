@@ -37,7 +37,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "https://shreya-mauve.vercel.app",
-        "https://shreya-vailism.vercel.app"
+        "https://shreya-vailism.vercel.app",
+        "https://shreya-mauve-vailisms-projects.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
