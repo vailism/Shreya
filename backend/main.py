@@ -34,7 +34,11 @@ app = FastAPI(
 # services are behind the same nginx origin.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://shreya-mauve.vercel.app",
+        "https://shreya-vailism.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

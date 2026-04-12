@@ -99,7 +99,9 @@ export default function Home() {
   const [stats, setStats] = useState({ members: 0, projects: 0, events: 0 })
 
   useEffect(() => {
-    const base = 'https://kp-dev-cell-production.up.railway.app/api'
+    const rawBase = import.meta.env.VITE_API_BASE_URL || 'https://kp-dev-cell-production.up.railway.app'
+    const base = rawBase.endsWith('/api') ? rawBase : `${rawBase}/api`
+    
     Promise.all([
       fetch(`${base}/team/`).then(r => r.json()),
       fetch(`${base}/projects/`).then(r => r.json()),
