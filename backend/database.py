@@ -13,7 +13,7 @@ MONGO_URI = os.getenv("MONGO_URI", "mongodb://admin:devcelliitmandi@mongo:27017/
 # Auto-detect if we should use TLS based on the URI
 use_tls = "mongodb+srv://" in MONGO_URI
 client = AsyncIOMotorClient(MONGO_URI, tls=use_tls, tlsAllowInvalidCertificates=True)
-db = client.get_default_database() or client["kpdevcel"]
+db = client["kpdevcel"]
 
 team_collection = db["team"]
 projects_collection = db["projects"]
