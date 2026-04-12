@@ -7,8 +7,9 @@
 import axios from 'axios'
 import { auth } from '../firebase'
 const BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
-// Ensure the URL ends with /api
-const FINAL_URL = BASE_URL.endsWith('/api') ? BASE_URL : `${BASE_URL}/api`
+// Normalize URL: remove trailing slash from base, then add /api/
+const CLEAN_BASE = BASE_URL.replace(/\/$/, '')
+const FINAL_URL = `${CLEAN_BASE}/api`
 
 export function useApi() {
   const instance = axios.create({ baseURL: FINAL_URL })
