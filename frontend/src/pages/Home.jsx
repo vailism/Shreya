@@ -99,7 +99,7 @@ export default function Home() {
   const [stats, setStats] = useState({ members: 0, projects: 0, events: 0 })
 
   useEffect(() => {
-    const rawBase = import.meta.env.VITE_API_BASE_URL || 'https://kp-dev-cell-production.up.railway.app'
+    const rawBase = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
     const base = rawBase.endsWith('/api') ? rawBase : `${rawBase}/api`
     
     Promise.all([
