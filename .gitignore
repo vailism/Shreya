@@ -1,18 +1,5 @@
-.env
-*.env
-.env.*
-# Ignore specific sensitive keys
-serviceAccountKey.json
-# But allow essential project JSONs
-!package.json
-!package-lock.json
-!composer.json
-
-.DS_Store
 node_modules/
-__pycache__/
+.env
+.DS_Store
 dist/
 build/
-.vscode/
-.idea/
-*.log
